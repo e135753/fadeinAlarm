@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1DD99222967B000081D0D4 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1DD99122967B000081D0D4 /* AlarmViewController.swift */; };
+		CD2C9AB92295296D00C50EA9 /* a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD2C9AB82295296D00C50EA9 /* a.mp3 */; };
 		CD53C5342294085C0055AF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C5332294085C0055AF9B /* AppDelegate.swift */; };
 		CD53C5362294085C0055AF9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C5352294085C0055AF9B /* ViewController.swift */; };
 		CD53C5392294085C0055AF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD53C5372294085C0055AF9B /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD1DD99122967B000081D0D4 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		CD2C9AB82295296D00C50EA9 /* a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a.mp3; sourceTree = "<group>"; };
 		CD53C5302294085C0055AF9B /* fadeinAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fadeinAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD53C5332294085C0055AF9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD53C5352294085C0055AF9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 			children = (
 				CD53C5332294085C0055AF9B /* AppDelegate.swift */,
 				CD53C5352294085C0055AF9B /* ViewController.swift */,
+				CD1DD99122967B000081D0D4 /* AlarmViewController.swift */,
 				CD53C5372294085C0055AF9B /* Main.storyboard */,
 				CD53C53A2294085E0055AF9B /* Assets.xcassets */,
+				CD2C9AB82295296D00C50EA9 /* a.mp3 */,
 				CD53C53C2294085E0055AF9B /* LaunchScreen.storyboard */,
 				CD53C53F2294085E0055AF9B /* Info.plist */,
 			);
@@ -125,6 +131,7 @@
 				CD53C53E2294085E0055AF9B /* LaunchScreen.storyboard in Resources */,
 				CD53C53B2294085E0055AF9B /* Assets.xcassets in Resources */,
 				CD53C5392294085C0055AF9B /* Main.storyboard in Resources */,
+				CD2C9AB92295296D00C50EA9 /* a.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +144,7 @@
 			files = (
 				CD53C5362294085C0055AF9B /* ViewController.swift in Sources */,
 				CD53C5342294085C0055AF9B /* AppDelegate.swift in Sources */,
+				CD1DD99222967B000081D0D4 /* AlarmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6696GEY228;
 				INFOPLIST_FILE = fadeinAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6696GEY228;
 				INFOPLIST_FILE = fadeinAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
