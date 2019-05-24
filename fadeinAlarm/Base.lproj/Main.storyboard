@@ -19,12 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSU-9k-mGY">
-                                <rect key="frame" x="107" y="353" width="200" height="100"/>
+                                <rect key="frame" x="107" y="353" width="287" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BI2-RO-biR"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Rlh-cj-lM8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,16 +46,16 @@
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-mb-R1I">
-                                <rect key="frame" x="111.5" y="302" width="191" height="51"/>
+                                <rect key="frame" x="154" y="302" width="106" height="51"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
-                                <state key="normal" title="😴 START ⏰">
+                                <state key="normal" title="START">
                                     <color key="titleColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="bO4-KA-Yzl" kind="show" identifier="alarmSegue" id="gaU-Sx-4y3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-g0-5fD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-g0-5fD" userLabel="mp3">
                                 <rect key="frame" x="177" y="563" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cYn-7p-NzF"/>
@@ -64,7 +63,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Image"/>
                                 <connections>
-                                    <action selector="openMp3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQu-JQ-cpw"/>
+                                    <action selector="📤🎼:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQu-JQ-cpw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,16 +76,17 @@
                             <constraint firstItem="VDA-JC-E3Z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-4" id="DZa-hn-cGA"/>
                             <constraint firstItem="q4F-WE-KXO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="4" id="Ff5-ln-PFI"/>
                             <constraint firstItem="tmC-mb-R1I" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P7k-Uw-IWz"/>
-                            <constraint firstItem="bSU-9k-mGY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PRY-gy-Lmo"/>
+                            <constraint firstItem="bSU-9k-mGY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-100" id="PRY-gy-Lmo"/>
                             <constraint firstItem="GHK-g0-5fD" firstAttribute="top" secondItem="q4F-WE-KXO" secondAttribute="bottom" constant="10" id="aQw-n6-o9O"/>
                             <constraint firstItem="q4F-WE-KXO" firstAttribute="top" secondItem="bSU-9k-mGY" secondAttribute="bottom" id="hCc-DG-TIe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bSU-9k-mGY" secondAttribute="trailing" constant="20" id="k6b-up-HMg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="clockLabel" destination="bSU-9k-mGY" id="qxD-Mo-htt"/>
-                        <outlet property="ddddd" destination="VDA-JC-E3Z" id="nSg-Sv-7sf"/>
-                        <outlet property="durationTimePicker" destination="q4F-WE-KXO" id="8Em-jy-ujJ"/>
+                        <outlet property="📝" destination="bSU-9k-mGY" id="qxD-Mo-htt"/>
+                        <outlet property="🔈🔉🔊time🎰" destination="q4F-WE-KXO" id="8Em-jy-ujJ"/>
+                        <outlet property="🛎🕰🎰" destination="VDA-JC-E3Z" id="nSg-Sv-7sf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

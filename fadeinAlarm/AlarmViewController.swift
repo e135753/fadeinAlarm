@@ -3,57 +3,108 @@ import AVKit
 
 class AlarmViewController: UIViewController,AVAudioPlayerDelegate {
     
-    var AlarmTime:Date!
-    var FadeTime:Int!
+    var 🛎🕰:Date!
+    var 🔈🔉🔊time:Int!
     
     var x = 0
     var y = 0
     
-    var clockLabel: UILabel!
+    var 🕰📝: UILabel!
     
-    var aaa:AVAudioPlayer!
+    var 📻:AVAudioPlayer!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    enum 🔈 {
+        case 🔇
+        case 🔇🔈🔉🔊
+        case 🔊🔉🔈🔇
+    }
+    
+    var 🔈state:🔈 = .🔇
+    
+    var 🕕:Timer!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        clockLabel = UILabel(frame: .init(x: 0, y: 0, width: 200, height: 200))
-        clockLabel.numberOfLines = 3
-        clockLabel.textColor = .gray
-        view.addSubview(clockLabel)
+        🕰📝 = UILabel(frame: .init(x: 0, y: 0, width: 200, height: 200))
+        🕰📝.numberOfLines = 4
+        🕰📝.textColor = .lightGray
+        view.addSubview(🕰📝)
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(clock), userInfo: nil, repeats: true)
-        clock()
-        
-        Timer(fireAt: AlarmTime, interval: .zero, target: self, selector: #selector(Alarmmm), userInfo: nil, repeats: false).fire()
-        
-        let g = UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:)))
-        view.addGestureRecognizer(g)
+        let 👆 = UITapGestureRecognizer(target: self, action: #selector(🔚))
+        view.addGestureRecognizer(👆)
         
         guard let 📍 = Bundle.main.url(forResource: "a", withExtension: "mp3") else { return }
+        let 🗃 = FileManager.default
+        let 🗂 = 🗃.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        guard let 🏷 = try? FileManager.default.contentsOfDirectory(at: 🗂, includingPropertiesForKeys: nil, options: [])
+            else { return }
         do{
-            aaa = try AVAudioPlayer(contentsOf: 📍)
-            aaa.delegate = self
-            aaa.volume = .zero
-            aaa.numberOfLoops = 5
+            if 🏷.isEmpty{
+                📻 = try AVAudioPlayer(contentsOf: 📍)
+            }else{
+                📻 = try AVAudioPlayer(contentsOf: 🏷[0])
+            }
+            📻.delegate = self
+            📻.volume = .zero
+            📻.numberOfLoops = 5
         } catch {
-            print("aaa")
+            print("👿")
+        }
+        
+        🕕 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(🕰), userInfo: nil, repeats: true)
+        🕰()
+        
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let 🗯 = UIAlertController(title: "⚠️", message: "❌ leave App\n❌ sleep device\n❌ mute-mode\n❓ 🔊🎚\n❓ 📱🔋🔌", preferredStyle: .alert)
+        let 🕹 = UIAlertAction(title: "👌🏽", style: .default, handler: nil)
+        🗯.addAction(🕹)
+        self.present(🗯, animated: true, completion: nil)
+    }
+    
+    
+    @objc func 🕰(){
+        let 📅 = DateFormatter()
+        📅.timeStyle = .short
+        🕰📝.text = 📅.string(from: Date()) + "\nAlarm for " + 📅.string(from: 🛎🕰) + "~\nFade-in " + String(🔈🔉🔊time) + "min\nvolume " + String(📻.volume)
+        x = x % (Int(view.frame.width) - 200) + 1
+        y = y % (Int(view.frame.height) - 200) + 1
+        🕰📝.frame = .init(x: x, y: y, width: 200, height: 200)
+        switch 🔈state{
+        case .🔇:
+            if 📅.string(from: Date()) == 📅.string(from: 🛎🕰){
+                📻.play()
+                🔈state = .🔇🔈🔉🔊
+            }
+        case .🔇🔈🔉🔊:
+            if 📻.volume > 1{ break }
+            📻.volume += 1.0 / 60.0 / Float(🔈🔉🔊time!)
+        case .🔊🔉🔈🔇:
+            📻.volume -= 0.1
+            🕰📝.alpha -= 0.1
+            if 📻.volume < 0{
+                📻.stop()
+                🕕.invalidate()
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
-    @objc func clock(){
-        let a = DateFormatter()
-        a.timeStyle = .short
-        clockLabel.text = a.string(from: Date()) + "\nAlarm for " + a.string(from: AlarmTime) + ".\nFadein " + String(FadeTime) + "min."
-        x = x % (Int(view.frame.width) - 200) + 1
-        y = y % (Int(view.frame.height) - 200) + 1
-        clockLabel.frame = .init(x: x, y: y, width: 200, height: 200)
+    @objc func 🔚(){
+        🔈state = .🔊🔉🔈🔇
+        🕰📝.textColor = .white
     }
-    
-    @objc func Alarmmm(){
-        print(self)
-    }
-    
     override var prefersHomeIndicatorAutoHidden: Bool{
+        return true
+    }
+    
+    override var prefersStatusBarHidden: Bool{
         return true
     }
 }
