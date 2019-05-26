@@ -63,7 +63,7 @@ class AlarmViewController: UIViewController,AVAudioPlayerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let 🗯 = UIAlertController(title: "⚠️", message: "❌ leave App\n❌ sleep device\n❌ mute-mode\n❓ 🔊🎚\n❓ 📱🔋🔌", preferredStyle: .alert)
-        let 🕹 = UIAlertAction(title: "👌🏽", style: .default, handler: nil)
+        let 🕹 = UIAlertAction(title: "ok", style: .default, handler: nil)
         🗯.addAction(🕹)
         self.present(🗯, animated: true, completion: nil)
     }

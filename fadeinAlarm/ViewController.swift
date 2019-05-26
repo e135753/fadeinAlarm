@@ -9,7 +9,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     @IBOutlet weak var 🔈🔉🔊time🎰: UIPickerView!
     
-    let 🔈🔉🔊timeList = [1,3,5,10,15,30]
+    let 🔈🔉🔊timeList = [1,3,5,10,15,30,60]
     
     var 🕛:Timer!
     
